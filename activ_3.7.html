@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" >
+	<script>
+	   function cadenas(){
+			var dias=['lunes','martes','miércoles'];
+			var diasUpper=[];
+			dias.forEach(function(item,indice){
+				diasUpper.push(item.substr(0,1).toUpperCase()+item.substring(1,item.length));
+			}
+			);
+			console.log(diasUpper.toString());
+	   }
+	
+	</script>
+</head>
+<body>
+<p>JavaScript Template</p>
+<span> Manipulación de Strings </span>
+<input type="button" onclick="cadenas();" value="Pulsar" />
+
+</body>
+</html>

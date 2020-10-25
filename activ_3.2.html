@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" >
+	<script>
+	   function iniciar(){
+			var dias=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+			var diasLaborables=dias.slice(0,5);
+			var diasFestivos=dias.slice(5);
+
+		
+			console.log("Array dias: " + dias.toString());
+			console.log("Array diasLaborables: " + diasLaborables.toString());
+			console.log("Array diasFestivos: " + diasFestivos.toString());
+
+			alert("Ver resultado en ventana de depuración ");
+	   }
+	
+	</script>
+</head>
+<body>
+<p>JavaScript Template</p>
+<span> Manipular Array </span>
+<input type="button" onclick="iniciar();" value="Pulsar" />
+
+</body>
+</html>

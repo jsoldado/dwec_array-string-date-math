@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" >
+	<script>
+	   function ordenarPrimeroEltosPares(){
+			var arrayOriginal=[4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1];
+			var eltosPares=[];
+			var eltosImpares=[];
+			var eltosOrdenados=[];
+			for(i=0;i < arrayOriginal.length; i++){
+				if(arrayOriginal[i] % 2 == 0) eltosPares.push(arrayOriginal[i]);
+				else eltosImpares.push(arrayOriginal[i]);
+			}
+			eltosPares.sort();
+			eltosImpares.sort();
+			eltosOrdenados.splice(0,0,eltosPares);
+			eltosOrdenados.splice(eltosOrdenados.length,0,eltosImpares);
+			
+			console.log("Array ordenado con pares al principio: " + eltosOrdenados.toString());
+	   }
+	
+	</script>
+</head>
+<body>
+<p>JavaScript Template</p>
+<span> Ordenar primero eltos pares </span>
+<input type="button" onclick="ordenarPrimeroEltosPares();" value="Pulsar" />
+
+</body>
+</html>

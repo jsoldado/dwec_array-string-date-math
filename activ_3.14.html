@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" >
+	<script>
+	   var tiempoInicio=0; //Variable donde cargamos el instante de tiempo al pulsar Start (en msg)
+	   var tiempoFin=0; //Variable donde cargamos el instante de tiempo al pulsar Stop (en msg)
+	   var tiempoTranscurrido; // Variable donde volcamos el transcurso de tiempo entre tiempoInicio y tiempoFin
+	   function start(){
+		   tiempoInicio=new Date().getTime(); // Cargamos el momento actual en msg
+		   alert("¡Iniciado el cronómetro!");
+	   }
+	  
+	   function stop(){
+			tiempoFin=new Date().getTime(); // Cargamos el momento actual en msg
+			tiempoTranscurrido=((tiempoFin-tiempoInicio)/1000).toFixed(2); //Calculamos el tiempo trasncurrido en sg usando dos decimales
+			alert(`Tiempo trasncurrido ${tiempoTranscurrido} sg`)
+	   }
+
+	
+	</script>
+</head>
+<body>
+<p>JavaScript Template</p>
+<span> Cronómetro </span>
+<input type="button" onclick="start();" value="Start" />
+<input type="button" onclick="stop();" value="Stop" />
+</body>
+</html>

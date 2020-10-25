@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" >
+	<script>
+	   function creaFecha(){
+			var diasNacDesdeEpoch= 1202; //Han transcurrido 1202 días desde 1/1/1970 al 17/4/1973
+			var milisegundos = diasNacDesdeEpoch * 24 * 60 * 60 * 1000;
+			var fechaNac=new Date(milisegundos);
+			document.write("Fecha nacimiento : " + fechaNac.toUTCString());
+	   }
+	
+	</script>
+</head>
+<body>
+<p>JavaScript Template</p>
+<span> Crea fecha nacimiento usando milisegundos </span>
+<input type="button" onclick="creaFecha();" value="Pulsar" />
+
+</body>
+</html>

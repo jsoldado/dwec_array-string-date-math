@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="testearBonoloto();" value="Testear función bonoloto()">
+    <input type="button" onclick="testeoDuplicidadArray();" value="Testear función compruebaDuplicidadArray()">
+    <script> 
+
+function bonoloto() {
+            var numBolas = 6; 
+            var minValor = 1; 
+            var maxValor = 49;
+            var sinDuplicidad = true; //true: se garantiza que no hay duplicidad y false: duplicidad no garantizada
+            var combinacionGanadora = [];
+            var numAlea;
+            for (var i = 0; i < numBolas; i++) {
+                do {
+                    numAlea = Math.floor(Math.random() * (maxValor - minValor + 1)) + minValor;
+                } while (sinDuplicidad && combinacionGanadora.indexOf(numAlea) != -1);
+                combinacionGanadora.push(numAlea);
+            }
+            return combinacionGanadora.sort((a, b) => a - b);
+        }
+
+        
+
+        function testearBonoloto() {
+            var numCombinaciones=100000;
+            var combinacion;
+            var pasaTest=true;
+            for(var i=0; i< numCombinaciones;i++){
+                combinacion=bonoloto();
+                if(compruebaDuplicidadArray(combinacion)){
+                    console.log(combinacion.toString() + " => ELTOS DUPLICADOS");
+                    pasaTest=false;
+                }
+            }
+            if(pasaTest) console.log("¡bonoloto() PASA TEST!");
+            else console.log("¡bonoloto() FALLA TEST");
+
+            alert("Ver consola depuración");
+        }
+
+ 
+
+/*******************************************************************************/
+
+
+        function compruebaDuplicidadArray(array) {
+            for (var i = 0; i < (array.length - 1); i++) {
+                if (array.indexOf(array[i], i + 1) != -1) return true;
+            }
+            return false;
+        }
+
+        function testeoDuplicidadArray(){
+            var valoresEntrada=[[3,2,8,3,2],[1,4,40,5,7,0],[1,0,4,8,1]];
+            var valoresEsperados=[true,false,true];
+            var testSuperado=true;
+            for (var i=0;i<valoresEntrada.length;i++){
+                if(compruebaDuplicidadArray(valoresEntrada[i])!=valoresEsperados[i]){
+                    console.log(`Valor entrada ${valoresEntrada[i]} con valor esperado ${valoresEsperados[i]} => FALLA`);
+                    testSuperado=false;
+                }
+            }
+
+            if(testSuperado) console.log("¡compruebaDuplicidadArray() PASA TEST!");
+            else console.log("¡compruebaDuplicidadArray() FALLA TEST!");
+
+            alert("Ver consola depuración");
+        }
+
+    </script>
+</body>
+
+</html>

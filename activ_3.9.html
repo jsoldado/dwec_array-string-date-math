@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculaPromedio(numeros){
+            var suma=0;
+            var promedio=0;
+            var numEltos=0;
+            for(var i=0; i < numeros.length;i++){
+                if(numeros[i]!=undefined){
+                    suma += numeros[i];
+                    numEltos++;
+                } 
+            }
+            promedio = (suma/numEltos).toFixed(2);
+            return promedio;
+        }
+
+        function probar(){
+            var arrayDisperso=[6.5,,8.9,,5.2];
+            var promedio=calculaPromedio(arrayDisperso);
+            console.log(`Promedio de ${arrayDisperso} es ${promedio}`);
+
+            alert("Ver ventana de depuración");
+        }
+    </script>
+    <h1>Calcula promedio de un array disperso</h1>
+    <input type="button"  onclick="probar();" value="Probar">
+</body>
+</html>

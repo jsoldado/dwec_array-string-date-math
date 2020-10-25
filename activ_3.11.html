@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<p>JavaScript Template</p>
+	<span> Calcula número más alto de un array </span>
+	<input type="button" onclick="probar();" value="Pulsar" />
+
+	<script>
+		function probar() {
+			var numeros = [232, 56, 33, 876, 32, 985, 729, 36, 184];
+			var mayor = mayorEltoArray(numeros);
+			console.log("Mayor número del array=" + mayor);
+			alert("Ver consola depuración");
+		}
+
+		function mayorEltoArray(array) {
+			var mayor = -Infinity;
+			for (var i = 0; i < array.length; i++) {
+				mayor = Math.max(mayor, array[i]);
+			}
+			return mayor;
+		}
+
+	</script>
+</body>
+
+</html>

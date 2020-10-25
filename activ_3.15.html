@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Función que convierte grados a radianes
+        function grados2radianes(grados){
+            return (grados/180*Math.PI);
+        }
+
+        function convertir(){
+            var grados;
+            var radianes;
+            grados= parseFloat(prompt("Introduzca valor en grados: "));
+            if(isNaN(grados)){
+                alert("Ha introducido un valor no numérico");
+                return;
+            }
+            radianes=grados2radianes(grados);
+            alert(`${grados} grados equivale a ${radianes} radianes`);
+
+        }
+    </script>
+    <h1>Conversión de grados a radianes</h1>
+    <input type="button" onclick="convertir();" value="Convertir">
+</body>
+</html>

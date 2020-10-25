@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" >
+	<script>
+	   function calculaMsg(){
+			var hoy= new Date();
+			var proximoCumple=new Date(2021,3,17);
+			var mSg = proximoCumple.getTime() - hoy.getTime();
+			console.log(`Tiempo hasta próximo cumpleaños : ${mSg} msg`);
+
+			alert("Ver consola de depuración");
+	   }
+	
+	</script>
+</head>
+<body>
+<p>JavaScript Template</p>
+<span> Crea milisg hasta próximo cumpleaños </span>
+<input type="button" onclick="calculaMsg();" value="Pulsar" />
+
+</body>
+</html>

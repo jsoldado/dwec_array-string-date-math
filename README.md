@@ -1,1 +1,1 @@
-# dwec_array-string-date-math
+Ejercicios resueltos de la Ud2 sobre objetos predefinidos Array, String, Date y Math
